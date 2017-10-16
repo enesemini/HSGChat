@@ -1,1 +1,11 @@
+@import "normalize";
+
 /* You can add global styles to this file, and also import other style files */
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+body, *{
+    font-family: "Avenir Book", "Avenir", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+}
