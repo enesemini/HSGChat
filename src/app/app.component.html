@@ -2,12 +2,7 @@
 <section class="main-content">
   <div class="container-fluid">
       <div class="row">
-          <div class="col-xs-12">
-              <ul>
-                  <li *ngFor="let post of posts">{{ post }}</li>
-              </ul>
-          </div>
-          <textarea (keyup.enter)="onSubmit(message)" [(ngModel)]="message"></textarea>
+          <app-chatbar></app-chatbar>
       </div>
   </div>
 </section>
