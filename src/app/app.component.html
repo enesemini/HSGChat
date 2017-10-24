@@ -1,9 +1,14 @@
 <app-header></app-header>
 <section class="main-content">
   <div class="container-fluid">
-      <div class="row">
-          <app-chatbar></app-chatbar>
-      </div>
+      
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let post of posts">{{ post }}</li>
+        </ul>
+    </div>
   </div>
+
+  <textarea placeholder="Nachricht hier eingeben..." class="form-control" (keyup.enter)="onSubmit(message)" [(ngModel)]="message"></textarea>
 </section>
 <app-footer></app-footer>
