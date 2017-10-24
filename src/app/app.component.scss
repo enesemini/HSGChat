@@ -1,4 +1,18 @@
 .main-content{
     min-height: calc(100vh - 260px);
+
+    position: relative;
 }
 
+ul{
+    margin-top: 50px;
+}
+
+
+textarea{
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    
+}
