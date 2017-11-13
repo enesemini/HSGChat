@@ -16,6 +16,9 @@ export class ChatbarComponent implements OnInit {
   }
 
   public onSubmit(message: string): void{
+    if(!this.message){
+      return;
+    }
     this.posts.push(this.message);
     this.message = '';
   }
