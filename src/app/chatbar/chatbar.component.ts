@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChatbarComponent implements OnInit {
     @Input() message: string;
+    @Input() username: string;
     posts = [];
 
   constructor() { }

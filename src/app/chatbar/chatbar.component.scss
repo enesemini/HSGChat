@@ -1,0 +1,27 @@
+.chatbar-content{
+    margin-top: 15px;
+    margin-bottom: 69px;
+}
+.list-group{
+    margin-bottom: 15px;
+}
+.chatbar-input{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    width: calc(100% - 30px);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+
+    &__username{
+        width: 200px;
+        flex-shrink: 0;
+    }
+    &__message{
+        flex-grow: 1;
+        // margin-left: 15px;
+    }
+}

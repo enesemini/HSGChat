@@ -1,11 +1,14 @@
-<div>
-    <div class="col-xs-12">
-        <ul>
-          <li *ngFor="let post of posts">{{ post }}</li>
-        </ul>
+
+    <div class="row chatbar-content">
+        <div class="col-xs-12">
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let post of posts">{{ post }}</li>
+            </ul>
+        </div>
     </div>
-    
-    <div class="col-xs-12">
-        <textarea class="form-control" (keyup.enter)="onSubmit(message)" [(ngModel)]="message"></textarea>
+
+    <div class="chatbar-input">
+        <!-- <input class="form-control chatbar-input__username" [(ngModel)]="username" placeholder="Benutzername"> -->
+        <input class="form-control chatbar-input__message" (keyup.enter)="onSubmit(message)" [(ngModel)]="message" placeholder="Nachricht">
     </div>
-</div>
+
