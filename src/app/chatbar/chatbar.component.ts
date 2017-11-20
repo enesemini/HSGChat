@@ -29,6 +29,7 @@ export class ChatbarComponent implements OnInit {
       message: this.message,
       date: new Date()
     };
+    console.log(newPost);
     this.posts.push(newPost);
     this.message = '';
   }

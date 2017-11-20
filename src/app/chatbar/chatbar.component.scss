@@ -24,6 +24,9 @@
         flex-grow: 1;
         margin-left: 15px;
     }
+    button{
+        margin-left: 15px;
+    }
 }
 
 .post{
@@ -42,7 +45,7 @@
 
     &:not(:first-of-type){
         .post-author{
-            display: none;
+            //display: none;
         }
         .post-date{
             // display: none;

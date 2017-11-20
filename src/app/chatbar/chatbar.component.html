@@ -5,7 +5,7 @@
                 <li class="list-group-item post" *ngFor="let post of posts">
                     <span class="post-author">{{ post.author }}</span>
                     <span class="post-date">{{ post.date }}</span>
-                    <span class="post-message">{{ post.message }}</span>
+                    <p class="post-message" [innerHTML]="post.message"></p>
                 </li>
             </ul>
         </div>
@@ -13,6 +13,9 @@
 
     <div class="chatbar-input">
         <input class="form-control chatbar-input__username" [(ngModel)]="username" placeholder="Benutzername">
-        <input class="form-control chatbar-input__message" (keyup.enter)="onSubmit(message, username)" [(ngModel)]="message" placeholder="Nachricht">
+        <input class="form-control chatbar-input__message" (keyup.0)="onSubmit(message, username)" [(ngModel)]="message" placeholder="Nachricht">
+        <button class="btn btn-default" (click)="onSubmit(message, username)">
+            Senden
+        </button>
     </div>
 
