@@ -22,6 +22,30 @@
     }
     &__message{
         flex-grow: 1;
-        // margin-left: 15px;
+        margin-left: 15px;
+    }
+}
+
+.post{
+    &-author{
+        display: inline-block;
+        font-weight: bold;
+    }
+    &-date{
+        display: inline-block;
+        font-size: .8em;
+        color: #aaa;
+    }
+    &-message{
+        display: block;
+    }
+
+    &:not(:first-of-type){
+        .post-author{
+            display: none;
+        }
+        .post-date{
+            // display: none;
+        }
     }
 }

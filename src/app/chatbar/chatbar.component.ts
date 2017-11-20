@@ -15,11 +15,21 @@ export class ChatbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  public onSubmit(message: string): void{
+  public onSubmit(message: string, username: string): void{
     if(!this.message){
+      alert('Keine Nachricht im Eingabefeld!');
       return;
     }
-    this.posts.push(this.message);
+    if(!this.username){
+      alert('Keine Benutzername im Eingabefeld!');
+      return;
+    }
+    let newPost = {
+      author: this.username,
+      message: this.message,
+      date: new Date()
+    };
+    this.posts.push(newPost);
     this.message = '';
   }
 
