@@ -1,7 +1,12 @@
 <app-header></app-header>
 <section class="main-content">
   <div class="container-fluid">
-      <app-chatbar></app-chatbar>
+        <app-chat-history
+            [posts]="posts"
+        ></app-chat-history>
+        <app-chatbar 
+            (addNewPost)="onAddNewPost($event)"
+        ></app-chatbar>
   </div>
 </section>
 <app-footer></app-footer>

@@ -1,0 +1,45 @@
+.chat-history{
+    margin-top: 15px;
+    margin-bottom: 69px;
+}
+
+.post{
+    position: relative;
+    &-author{
+        display: inline-block;
+        font-weight: bold;
+    }
+    &-date{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+        padding: 3px 10px;
+        background: #aaa;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 12px;
+        border-radius: 40px;
+    }
+    &-time{
+        display: inline-block;
+        font-size: .8em;
+        color: #aaa;
+    }
+    &-message{
+        display: block;
+        margin-bottom: 0;
+    }
+
+    &:not(:first-of-type){
+        .post-author{
+            //display: none;
+        }
+        .post-date{
+            // display: none;
+        }
+    }
+}

@@ -5,16 +5,20 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { HalloComponent } from './hallo/hallo.component';
 import { ChatbarComponent } from './chatbar/chatbar.component';
+import { ChatHistoryComponent } from './chat-history/chat-history.component';
+
+// import { registerLocaleData } from '@angular/common';
+// import localeDe from '@angular/common/locales/de';
+// registerLocaleData(localeDe);
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HalloComponent,
-    ChatbarComponent
+    ChatbarComponent,
+    ChatHistoryComponent
   ],
   imports: [
     BrowserModule,

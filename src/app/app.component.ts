@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor(){}
-  title = 'HSG Chat';
+  public title = 'HSG Chat';
+
+  public posts = [];
+
+  public onAddNewPost($event): void {
+    //alert('Hey!');
+    this.posts.push($event);
+  }
 }

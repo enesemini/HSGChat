@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-chatbar',
@@ -8,15 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ChatbarComponent implements OnInit {
     @Input() message: string;
     @Input() username: string;
-    posts = [];
+    @Output() addNewPost: EventEmitter<string> = new EventEmitter();
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
   public onSubmit(message: string, username: string): void{
-    if(!this.message){
+    console.log(message);
+    if( !/\S/.test(this.message) ){
       alert('Keine Nachricht im Eingabefeld!');
       return;
     }
@@ -24,13 +25,19 @@ export class ChatbarComponent implements OnInit {
       alert('Keine Benutzername im Eingabefeld!');
       return;
     }
-    let newPost = {
+
+    var newPost: any = {};
+    // Erstelle ein Object mit allen Werten
+    newPost = {
       author: this.username,
-      message: this.message,
+      message: this.message.replace(/(?:\r\n|\r|\n)/g, '<br>'),
       date: new Date()
     };
-    console.log(newPost);
-    this.posts.push(newPost);
+
+    // Sende das Object mit dem EventEmitter zu der höheren Instanz.
+    this.addNewPost.emit(newPost);
+
+    // Leere den Input für neue Nachrichten.
     this.message = '';
   }
 
