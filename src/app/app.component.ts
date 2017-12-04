@@ -21,7 +21,8 @@ export class AppComponent implements OnInit {
     this.http.get('https://hsg-chat.herokuapp.com/posts').subscribe(data => {
       // Read the result field from the JSON response.
       console.log('HTTP GET REQUEST');
-      this.posts.push(data[0]);
+      // this.posts.push(data[0]);
+      this.posts = data;
     });
   }
 
