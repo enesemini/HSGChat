@@ -12,6 +12,9 @@ import { ChatHistoryComponent } from './chat-history/chat-history.component';
 // import localeDe from '@angular/common/locales/de';
 // registerLocaleData(localeDe);
 
+// Import HttpClientModule from @angular/common/http
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,8 @@ import { ChatHistoryComponent } from './chat-history/chat-history.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

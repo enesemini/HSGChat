@@ -1,9 +1,13 @@
     <div class="row chat-history">
         <div class="col-xs-12">
             <ul class="list-group">
+                <!-- <span 
+                        *ngIf=" !posts[i-1] || ( posts[i-1].date.getYear() + '' + posts[i-1].date.getMonth() + '' + ('0' + posts[i-1].date.getDate()).slice(-2) !== posts[i].date.getYear() + '' + posts[i].date.getMonth() + '' + ('0' + posts[i].date.getDate()).slice(-2) )"
+                        class="post-date"
+                    > -->
                 <li class="list-group-item post" *ngFor="let post of posts; let i = index">
                     <span 
-                        *ngIf=" !posts[i-1] || ( posts[i-1].date.getYear() + '' + posts[i-1].date.getMonth() + '' + ('0' + posts[i-1].date.getDate()).slice(-2) !== posts[i].date.getYear() + '' + posts[i].date.getMonth() + '' + ('0' + posts[i].date.getDate()).slice(-2) )"
+                        *ngIf=" !posts[i-1]"
                         class="post-date"
                     >
                         {{ post.date | date:'d. MMMM yyyy':'':'de' }}
