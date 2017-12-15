@@ -1,6 +1,11 @@
 .main-content{
-    min-height: calc(100vh - 120px);
-    position: relative;
+    position: fixed;
+    bottom: 111px;
+    top: 80px;
+    right: 0;
+    left: 0;
+    overflow-y: auto;
+    background: darken(#f9f9fa, 3%);
 }
 
 ul{

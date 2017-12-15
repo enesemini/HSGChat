@@ -2,11 +2,12 @@
 <section class="main-content">
   <div class="container-fluid">
         <app-chat-history
-            [posts]="posts"
+            [userId]="userId"
         ></app-chat-history>
-        <app-chatbar 
-            (addNewPost)="onAddNewPost($event)"
-        ></app-chatbar>
   </div>
 </section>
+<app-chatbar 
+    (addNewPost)="onAddNewPost($event)"
+    (userIdCreated)="onUserIdCreated($event)"
+></app-chatbar>
 <app-footer></app-footer>

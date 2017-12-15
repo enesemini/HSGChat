@@ -1,12 +1,19 @@
 .list-group{
     margin-bottom: 15px;
 }
+textarea.form-control {
+    min-height: 40px;
+    height: auto;
+}
 .chatbar-input{
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    right: 15px;
-    width: calc(100% - 30px);
+    position: fixed;
+    bottom: 40px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    padding: 15px;
+    border-top: 1px solid #d0d0d0;
+    background: white;
 
     display: flex;
     flex-direction: row;

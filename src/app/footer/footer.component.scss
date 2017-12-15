@@ -6,6 +6,10 @@ footer{
     flex-direction: column;
     justify-content: center;
     padding: 0px 20px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
     h3{
         font-size: 18px;
         line-height: 1em;

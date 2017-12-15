@@ -1,19 +1,44 @@
 .chat-history{
     margin-top: 15px;
-    margin-bottom: 69px;
+    margin-bottom: 15px;
 }
 
 .post{
-    position: relative;
-    &-author{
+    display: flex;
+    flex-direction: row;
+    &:first-of-type{
+        margin-top: 30px;
+    }
+    &-info{
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 0px;
+        margin-right: 6px;
+    }
+    &-author-letter{
         display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin-right: 0px;
+        border-radius: 20px;
+        font-size: 18px;
         font-weight: bold;
+        text-transform: uppercase;
+        line-height: 30px;
+        text-align: center;
+    }
+    &-author{
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0;
+        line-height: 1;
     }
     &-date{
         position: absolute;
         top: 0;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 0%);
         display: inline-block;
         padding: 3px 10px;
         background: #aaa;
@@ -25,21 +50,37 @@
         border-radius: 40px;
     }
     &-time{
-        display: inline-block;
-        font-size: .8em;
+        display: block;
+        font-size: .7em;
+        line-height: 1;
+        margin: 6px 0 0;
         color: #aaa;
     }
     &-message{
         display: block;
         margin-bottom: 0;
     }
-
-    &:not(:first-of-type){
-        .post-author{
-            //display: none;
-        }
-        .post-date{
-            // display: none;
+    &-content{
+        position: relative;
+        padding: 6px 12px;
+        background: #fff;
+        // box-shadow: 0px 2px 10px 0px rgba(0,0,0,.15);
+        border-radius: 0px 8px 8px 8px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        display: inline-block;
+        max-width: 65%;
+        min-width: 10%;
+        box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+    }
+    &--own{
+        .post-content{
+            //float: right;
+            //text-align: right;
+            background-color: #dcf8c6;
+            p{
+                //color: white;
+            }
         }
     }
 }

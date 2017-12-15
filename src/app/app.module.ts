@@ -8,6 +8,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ChatbarComponent } from './chatbar/chatbar.component';
 import { ChatHistoryComponent } from './chat-history/chat-history.component';
 
+import { PusherService } from './pusher.service';
+import { MessageService } from './message.service';
+
 // import { registerLocaleData } from '@angular/common';
 // import localeDe from '@angular/common/locales/de';
 // registerLocaleData(localeDe);
@@ -28,7 +31,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [PusherService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

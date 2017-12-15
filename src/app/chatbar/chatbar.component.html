@@ -1,7 +1,7 @@
 
 <div class="chatbar-input">
     <input class="form-control chatbar-input__username" [(ngModel)]="username" placeholder="Benutzername">
-    <textarea class="form-control chatbar-input__message" (keyup.enter)="onSubmit(message, username)" [(ngModel)]="message" placeholder="Nachricht"></textarea>
+    <textarea rows="1" class="form-control chatbar-input__message" (keyup.enter)="onSubmit(message, username)" [(ngModel)]="message" placeholder="Nachricht" autofocus></textarea>
     <button [disabled]="( !message || !username )" class="btn btn-default" (click)="onSubmit(message, username)">
         Senden
     </button>

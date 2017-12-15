@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
 
+import { MessageService } from './message.service';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-root',
@@ -10,29 +11,28 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class AppComponent implements OnInit {
-  constructor(private http: HttpClient){
-  }
-  public title = 'HSG Chat';
 
-  public posts:any = [];
+  constructor(private http: HttpClient, private messageService: MessageService){
+  }
+
+  public title = 'HSG Chat Team 6';
+
+  public userId:any = '';
 
   ngOnInit(): void {
-    // Make the HTTP request:
-    this.http.get('https://hsg-chat.herokuapp.com/posts').subscribe(data => {
-      // Read the result field from the JSON response.
-      console.log('HTTP GET REQUEST');
-      // this.posts.push(data[0]);
-      this.posts = data;
-    });
+    this.userId = localStorage.getItem('userId') || '';
   }
 
+  public onUserIdCreated($event): void {
+    this.userId = localStorage.setItem('userId', $event)
+  }
   public onAddNewPost($event): void {
-    //alert('Hey!');
-    this.posts.push($event);
+    let message = $event.message;
+    let author = $event.author;
+    let date = $event.date;
+    let userId = $event.userId;
+    let color = $event.color;
 
-    this.http.post('https://hsg-chat.herokuapp.com/posts', $event).subscribe(data => {
-      // Read the result field from the JSON response.
-      console.log(data['message']);
-    });
+    this.messageService.send({message: message, author: author, date: date, userId: userId, color: color});
   }
 }
