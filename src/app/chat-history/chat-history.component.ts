@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { Message } from '../message.service';
 import { MessageService } from '../message.service';
+import { PusherService } from '../pusher.service';
 
 @Component({
   selector: 'app-chat-history',
@@ -14,13 +15,17 @@ export class ChatHistoryComponent implements OnInit {
 
     constructor(
         private messageService: MessageService,
+        private pusherService: PusherService
     ) {
         this.messages = [];
     }
 
     ngOnInit() {
-    this.messageService.messagesStream
-        .subscribe(this.newMessageEventHandler.bind(this));
+        this.messageService.messagesStream.subscribe(this.newMessageEventHandler.bind(this));
+
+        this.pusherService.isTypingChannel.bind('new-isTyping', (username) => {
+            console.log(username + ' is typing...');
+        });
     }
 
     private newMessageEventHandler(event: Message): void {

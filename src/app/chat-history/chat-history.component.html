@@ -4,25 +4,27 @@
                         *ngIf=" !messages[i-1] || ( messages[i-1].date.getYear() + '' + messages[i-1].date.getMonth() + '' + ('0' + messages[i-1].date.getDate()).slice(-2) !== messages[i].date.getYear() + '' + messages[i].date.getMonth() + '' + ('0' + messages[i].date.getDate()).slice(-2) )"
                         class="post-date"
                     > -->
-            <div *ngFor="let post of messages; let i = index" class="post" [ngClass]="{'post--own': (post.userId == userId) }">
-                <span 
-                    *ngIf=" !messages[i-1]"
-                    class="post-date"
-                >
-                    {{ post.date | date:'d. MMMM yyyy':'':'de' }}
-                </span>
-
-                <div class="post-info">
-                    <div>
-                        <span class="post-author-letter" [style.background-color]="post.color">{{ post.author.charAt(0) }}</span>
-                        <span class="post-time">{{ post.date | date:'HH:mm':'':'de' }}</span>
+            <span 
+                *ngIf="messages.length > 0"
+                class="post-date"
+            >
+                {{ messages[0].date | date:'d. MMMM yyyy':'':'de' }}
+            </span>
+            <div *ngFor="let post of messages; let i = index">
+                
+                <div class="post" [ngClass]="{'post--own': (post.userId == userId) }">
+                    <div class="post-info">
+                        <div>
+                            <span class="post-author-letter" [style.background-color]="post.color">{{ post.author.charAt(0) }}</span>
+                            <span class="post-time">{{ post.date | date:'HH:mm':'':'de' }}</span>
+                        </div>
                     </div>
+                    <div class="post-content">
+                        <span class="post-author">{{ post.author }}</span>
+                        <p class="post-message" [innerHTML]="post.message"></p>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="post-content">
-                    <span class="post-author">{{ post.author }}</span>
-                    <p class="post-message" [innerHTML]="post.message"></p>
-                </div>
-                <div class="clearfix"></div>
             </div>
         </div>
     </div>

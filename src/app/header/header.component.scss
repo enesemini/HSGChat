@@ -13,11 +13,23 @@ header{
     right: 0;
     left: 0;
     z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 .header{
+    &__info{
+        color: white;
+        cursor: pointer;
+        svg{
+            fill: currentColor;
+            width: 20px;
+        }
+    }
     &__brand{
         img{
-            height: 50px;
+            height: 40px;
             display: block;
         }
     }

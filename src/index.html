@@ -14,10 +14,62 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00802f">
     <meta name="theme-color" content="#00802f">
 
-    <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script>
+      
+  </script>
 
 </head>
 <body>
   <app-root></app-root>
+
+  <script>
+      $(document).ready(function(){
+
+        var scrolled = false;
+
+        function updateScroll(){
+            //console.log('updateScroll()');
+
+            if(!scrolled){
+                //console.log('updateScroll() should be scrolling to bottom!!!!');
+                var element = $('.main-content');
+                $(".main-content").scrollTop( $('.main-content .container-fluid').height() );
+            }
+        }
+
+        $('.main-content').bind('scroll', function(){
+            //console.log('(///////// BIND SCROLL ////////////');
+            checkScroll();
+        });
+
+
+        setInterval(updateScroll, 50);
+        setInterval(checkScroll, 50);
+
+        function checkScroll(e) {
+            var elem = $('.main-content');
+            setTimeout(function(){
+                if (elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight()) {
+                    $('.scroll-to-bottom').addClass('is-hidden');
+                    scrolled = false;
+                } else {
+                    $('.scroll-to-bottom').removeClass('is-hidden');
+                    scrolled = true;
+                }
+            }, 0);
+        }
+
+        $('.scroll-to-bottom').click(function(){
+            $(".main-content").animate({ scrollTop: $('.main-content .container-fluid').height() }, "slow");
+            scrolled = false;
+            return false;
+        });
+
+      });
+  </script>
 </body>
 </html>

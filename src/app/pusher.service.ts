@@ -6,6 +6,7 @@ declare const Pusher: any;
 export class PusherService {
     pusher: any;
     messagesChannel: any;
+    isTypingChannel: any;
 
     constructor() {
         this.initializePusher();
@@ -18,5 +19,6 @@ export class PusherService {
             encrypted: true
         });
         this.messagesChannel = this.pusher.subscribe('private-all-messages');
+        this.isTypingChannel = this.pusher.subscribe('private-is-typing');
     }
 }

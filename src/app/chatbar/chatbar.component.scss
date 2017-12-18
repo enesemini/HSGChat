@@ -7,7 +7,7 @@ textarea.form-control {
 }
 .chatbar-input{
     position: fixed;
-    bottom: 40px;
+    bottom: 0px;
     left: 0px;
     right: 0px;
     width: 100%;
@@ -19,16 +19,31 @@ textarea.form-control {
     flex-direction: row;
     flex-wrap: no-wrap;
 
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+    }
+
     &__username{
         width: 200px;
         flex-shrink: 0;
+        @media screen and (max-width: 600px) {
+            width: auto;
+            margin-bottom: 10px;
+        }
     }
     &__message{
         flex-grow: 1;
         margin-left: 15px;
+        @media screen and (max-width: 600px) {
+            margin-left: 0;
+            margin-bottom: 10px;
+        }
     }
     button{
         margin-left: 15px;
+        @media screen and (max-width: 600px) {
+            margin-left: 0;
+        }
     }
 }
 

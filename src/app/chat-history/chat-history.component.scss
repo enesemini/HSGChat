@@ -1,13 +1,15 @@
 .chat-history{
     margin-top: 15px;
     margin-bottom: 15px;
+    position: relative;
 }
+
 
 .post{
     display: flex;
     flex-direction: row;
     &:first-of-type{
-        margin-top: 30px;
+        //margin-top: 30px;
     }
     &-info{
         display: inline-flex;
@@ -35,13 +37,18 @@
         line-height: 1;
     }
     &-date{
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, 0%);
-        display: inline-block;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 15px;
+        z-index: 44;
+        
+        width: 170px;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
         padding: 3px 10px;
-        background: #aaa;
+        background: rgba(0,0,0,0.4);
+        box-shadow: 0px 1px 3px rgba(0,0,0,.2);
         color: white;
         font-weight: bold;
         text-transform: uppercase;
@@ -49,12 +56,13 @@
         font-size: 12px;
         border-radius: 40px;
     }
+
     &-time{
         display: block;
         font-size: .7em;
         line-height: 1;
         margin: 6px 0 0;
-        color: #aaa;
+        color: #888;
     }
     &-message{
         display: block;
@@ -77,7 +85,7 @@
         .post-content{
             //float: right;
             //text-align: right;
-            background-color: #dcf8c6;
+            background-color: #c2efff;
             p{
                 //color: white;
             }

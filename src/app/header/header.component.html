@@ -2,4 +2,39 @@
     <a class="header__brand">
         <img src="assets/hsg-chat-logo.png">
     </a>
+    <div class="header__info" data-toggle="modal" data-target="#infoModal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></svg>
+    </div>
 </header>
+
+<!-- Modal -->
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="infoModalLabel">HSG Chat - App Info</h4>
+      </div>
+      <div class="modal-body">
+        <p>Diese Applikation wurde im Rahmen des Kurses "Professionelle Entwicklung von Webapplikationen" im HS17 von Team 6 entwickelt.</p>
+        <p>Made with <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i> by:</p>
+        <ul>
+            <li>Laura Berseth</li>
+            <li>Marco Dingler</li>
+            <li>Noëmi Duroe</li>
+            <li>Enes Emini</li>
+            <li>Benjamin Lin</li>
+            <li>Flavian Negri</li>
+        </ul>
+
+        <hr>
+        <p>Der Quellcode dieser Applikation befindet sich auf <a href="https://github.com/enesemini/HSGChat">GitHub.</a></p>
+        <hr>
+        <p>Die Nachrichten die über diese Applikation versendet werden, werden nicht gespeichert.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
+      </div>
+    </div>
+  </div>
+</div>
